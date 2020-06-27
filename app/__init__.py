@@ -1,5 +1,5 @@
 import logging
-from logging.handler import SMTPHandler, RotatingFileHandler
+from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
@@ -14,7 +14,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
-login.login_message = _l('Please log in to access this page')
+login.login_message = 'Please log in to access this page'
 mail = Mail()
 bootstrap = Bootstrap()
 moment = Moment()
